@@ -104,7 +104,7 @@ const editMovie = async (req, res, next)=>{
     try{
         let {id,img,title,created,qualification, idCharacter}=req.body;
 
-            let searchId= await Character.findByPk(id);
+            let searchId= await Movie.findByPk(id);
 
             if(!searchId){// validamos si nos trae un arreglo vacio 
                 return res.status(409).send({Error:"El ID de la Pelicula no existe"});

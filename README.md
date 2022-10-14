@@ -109,3 +109,15 @@ En este endpoints podremos eliminar un personaje de la Base de Datos.
     "weight":"1.60"
 }
 ```
+
+## Movie
+
+Para los endpoints no se colocaran imagenes ya que es muy parecida a los anterios.
+
+ - GET   http://localhost:3001/movies
+
+ - POST  http://localhost:3001/newMovie
+
+ - DELETE  http://localhost:3001/deleteMovie
+ 
+ - PUT  http://localhost:3001/editMovie
