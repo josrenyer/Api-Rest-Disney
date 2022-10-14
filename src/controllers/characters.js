@@ -110,7 +110,7 @@ const deleteCharacter= async(req, res, next)=>{
       				},
     			});
 
-    			return res.status(200).send("Producto eliminado");
+    			return res.status(200).send("Personaje eliminado");
     		}
 
 		}else{

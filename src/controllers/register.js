@@ -16,26 +16,38 @@ const register = async (req, res, next)=>{
 			})
 
 			if(search){
-				res.status(410).send({Erro: `El ${email} que instrodujo ya esta en la Base de Datos`})
+				res.status(410).send({Erro: `El Email ${email} que instrodujo ya esta en la Base de Datos, por Favor intente registrarse con otro Email`})
 			}else{
 
-				let pashas=await encrypt(password)
-
-				let create=await User.create({
-					userName,
-					name,
-					lastName,
-					email,
-					password:pashas
+				let searchUsername=await User.findOne({
+					where:{
+						userName
+					}
 				})
 
-				emailer(create)
+				if(searchUsername){
+					res.status(410).send({Erro: `El UserName ${userName} que instrodujo ya esta en la Base de Datos, por Favor intente registrarse con otro UserName`})
+				}else{
 
-				res.status(200).send({
-					Data:"Usuario registrado exitosamente",
-					Usuario: create.userName,
-					Email:create.email
-				})
+					let pashas=await encrypt(password)
+
+					let create=await User.create({
+						userName,
+						name,
+						lastName,
+						email,
+						password:pashas
+					})
+
+					emailer(create)
+
+					res.status(200).send({
+						Data:"Usuario registrado exitosamente",
+						Usuario: create.userName,
+						Email:create.email
+					})
+
+				}
 			}
 
 		}else{
