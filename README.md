@@ -46,6 +46,13 @@ Primeramente para poder acceder a los endpoints para realizar consultar y modifi
 }
 ```
 
+### Auth
+
+El tipo de Authorization debe ser Bearer Token, para luego copiar el Token que se le fue dado en el login.
+
+ <img src="./src/img/auth.png"/>
+
+
 ## Character
 
  - GET  http://localhost:3001/character
@@ -54,7 +61,6 @@ Este endpoints permite obterner todos los personajes creados de la Base de Datos
 
 
 <img src="./src/img/character.png"/>
-
 
 
 
@@ -88,6 +94,7 @@ En este endpoints podremos eliminar un personaje de la Base de Datos.
     "id":"1"
 }
 ```
+
 
  - PUT  http://localhost:3001/editCharacter
 
