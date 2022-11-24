@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,16 @@
     "sequelize": "^6.21.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "eslint": "^8.28.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.8.0"
+  },
+  "lint-staged": {
+    "./**/*.js": [
+      "prettier --write",
+      "eslint"
+    ]
   }
 }

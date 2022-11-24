@@ -4,23 +4,20 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('character', {
-    img:{
+    img: {
       type: DataTypes.STRING,
     },
-    name:{
+    name: {
       type: DataTypes.STRING,
     },
-    age:{
+    age: {
       type: DataTypes.STRING,
     },
-    weight:{
+    weight: {
       type: DataTypes.STRING,
     },
-    history:{
+    history: {
       type: DataTypes.TEXT,
     },
-  },
-  {
-    timestamps:false
   });
 };
